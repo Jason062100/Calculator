@@ -1,0 +1,89 @@
+// 11/13/19
+// Version 2.2
+// Changelog: Added exception catching.
+
+import java.util.Scanner;
+
+public class Calculator {
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Hi what is your name? ");
+		String yourName = sc.nextLine();
+		System.out.print("Hi " + yourName + ". Would you like to use the calculator? ");
+		String answer = sc.nextLine();
+		
+		if (answer.equalsIgnoreCase("yes")) {
+			System.out.print("Would you like to add, subtract, multiply or divide? ");
+			String s = sc.nextLine();
+			
+			if (s.equalsIgnoreCase("add")) {
+				try {
+					System.out.print("What is the first number you would like to add? ");
+					int intAddOne = sc.nextInt();
+					System.out.print("What is the second number you would like to add? ");
+					int intAddTwo = sc.nextInt();
+					int intAdd = intAddOne + intAddTwo;
+					System.out.print(intAddOne + " + " + intAddTwo + " = " + intAdd);
+
+				} catch(Exception e) {
+					System.out.println("That is not a valid input. Please try again.");
+
+				}
+
+				
+			} else if (s.equalsIgnoreCase("subtract")) {
+				try {
+					System.out.print("What is the first number you would like to subtract? ");
+					int intSubOne = sc.nextInt();
+					System.out.print("What is the second number you would like to subtract? ");
+					int intSubTwo = sc.nextInt();
+					int intSub = intSubOne - intSubTwo;
+					System.out.print(intSubOne + " - " + intSubTwo + " = " + intSub);
+					
+				} catch(Exception e) {
+					System.out.println("That is not a valid input. Please try again.");
+					
+				}
+
+
+			} else if (s.equalsIgnoreCase("multiply")) {
+				try {
+					System.out.print("What is the first number you would like to multiply? ");
+					int intMultOne = sc.nextInt();
+					System.out.print("What is the second number you would like to multiply? ");
+					int intMultTwo = sc.nextInt();
+					int intMult = intMultOne * intMultTwo;
+					System.out.print(intMultOne + " X " + intMultTwo + " = " + intMult);
+
+				} catch(Exception e) {
+					System.out.println("That is not a valid input. Please try again.");
+
+				}
+				
+			} else if (s.equalsIgnoreCase("divide")) {
+				try {
+					System.out.print("What is the first number you would like to divide? ");
+					int intMultOne = sc.nextInt();
+					System.out.print("What is the second number you would like to divide? ");
+					int intMultTwo = sc.nextInt();
+					int intMult = intMultOne / intMultTwo;
+					System.out.print(intMultOne + " / " + intMultTwo + " = " + intMult);
+					
+				} catch(Exception e) {
+					System.out.println("That is not a valid input. Please try again.");
+					
+				}
+				
+			} else {
+				System.out.print("Sorry, I don't recognize that command.");
+			}
+			
+		} else {
+			System.out.print("Shuting Down.");
+		}
+		
+	}
+	
+}
