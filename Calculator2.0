@@ -1,5 +1,5 @@
 // 11/12/19
-// Version 1.2
+// Version 2.0
 // This version now has the possibility of adding, subtracting, multiplying, and dividing.
 
 import java.util.Scanner;
