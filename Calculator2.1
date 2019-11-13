@@ -1,0 +1,63 @@
+// 11/13/19
+// Version 2.1
+// Added a personal style.
+
+import java.util.Scanner;
+
+public class Calculator {
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Hi what is your name? ");
+		String yourName = sc.nextLine();
+		System.out.print("Hi " + yourName + ". Would you like to use the calculator? ");
+		String answer = sc.nextLine();
+		
+		if (answer.equalsIgnoreCase("yes")) {
+			System.out.println("Would you like to add, subtract, multiply or divide? ");
+			String s = sc.nextLine();
+			
+			if (s.equalsIgnoreCase("add")) {
+				System.out.println("What is the first number you would like to add? ");
+				int intAddOne = sc.nextInt();
+				System.out.println("What is the second number you would like to add? ");
+				int intAddTwo = sc.nextInt();
+				int intAdd = intAddOne + intAddTwo;
+				System.out.println(intAddOne + " + " + intAddTwo + " = " + intAdd);
+				
+			} else if (s.equalsIgnoreCase("subtract")) {
+				System.out.println("What is the first number you would like to subtract? ");
+				int intSubOne = sc.nextInt();
+				System.out.println("What is the second number you would like to subtract? ");
+				int intSubTwo = sc.nextInt();
+				int intSub = intSubOne - intSubTwo;
+				System.out.println(intSubOne + " - " + intSubTwo + " = " + intSub);
+				
+			} else if (s.equalsIgnoreCase("multiply")) {
+				System.out.println("What is the first number you would like to multiply? ");
+				int intMultOne = sc.nextInt();
+				System.out.println("What is the second number you would like to multiply? ");
+				int intMultTwo = sc.nextInt();
+				int intMult = intMultOne * intMultTwo;
+				System.out.println(intMultOne + " X " + intMultTwo + " = " + intMult);
+				
+			} else if (s.equalsIgnoreCase("divide")) {
+				System.out.println("What is the first number you would like to divide? ");
+				int intMultOne = sc.nextInt();
+				System.out.println("What is the second number you would like to divide? ");
+				int intMultTwo = sc.nextInt();
+				int intMult = intMultOne / intMultTwo;
+				System.out.println(intMultOne + " / " + intMultTwo + " = " + intMult);
+				
+			} else {
+				System.out.println("Sorry, I don't recognize that command.");
+			}
+			
+		} else {
+			System.out.println("Shuting Down.");
+		}
+		
+	}
+	
+}
