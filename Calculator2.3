@@ -1,0 +1,126 @@
+// 11/13/19
+// Version 2.3
+// Changelog: Added a custom exponent method to the options.
+
+package tutorial1;
+import java.util.Scanner;
+
+public class Calculator {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		int a = 0;
+
+		//Asks what is your name and if you would like to use the calculator
+		System.out.print("Hi what is your name? ");
+		String yourName = sc.nextLine();
+		System.out.print("Hi " + yourName + ". Would you like to use the calculator? ");
+		String answer = sc.nextLine();
+
+		//Asks what operator you would like to use0
+		if (answer.equalsIgnoreCase("yes")) {
+			System.out.print("Would you like to add, subtract, multiply, divide or use an exponent? ");
+			String s = sc.nextLine();
+
+			//Addition block
+			if (s.equalsIgnoreCase("add")) {
+				try {
+					System.out.print("What is the first number you would like to add? ");
+					int intAddOne = sc.nextInt();
+					System.out.print("What is the second number you would like to add? ");
+					int intAddTwo = sc.nextInt();
+					int intAdd = intAddOne + intAddTwo;
+					System.out.print(intAddOne + " + " + intAddTwo + " = " + intAdd);
+
+				} catch(Exception e) {
+					System.out.println("That is not a valid input. Please try again.");
+
+				}
+
+				//Subtraction block
+			} else if (s.equalsIgnoreCase("subtract")) {
+				try {
+					System.out.print("What is the first number you would like to subtract? ");
+					int intSubOne = sc.nextInt();
+					System.out.print("What is the second number you would like to subtract? ");
+					int intSubTwo = sc.nextInt();
+					int intSub = intSubOne - intSubTwo;
+					System.out.print(intSubOne + " - " + intSubTwo + " = " + intSub);
+
+				} catch(Exception e) {
+					System.out.println("That is not a valid input. Please try again.");
+
+				}
+
+				//Multiplication block
+			} else if (s.equalsIgnoreCase("multiply")) {
+				try {
+					System.out.print("What is the first number you would like to multiply? ");
+					int intMultOne = sc.nextInt();
+					System.out.print("What is the second number you would like to multiply? ");
+					int intMultTwo = sc.nextInt();
+					int intMult = intMultOne * intMultTwo;
+					System.out.print(intMultOne + " X " + intMultTwo + " = " + intMult);
+
+				} catch(Exception e) {
+					System.out.println("That is not a valid input. Please try again.");
+
+				}
+
+				//Division block
+			} else if (s.equalsIgnoreCase("divide")) {
+				try {
+					System.out.print("What is the first number you would like to divide? ");
+					int intDivOne = sc.nextInt();
+					System.out.print("What is the second number you would like to divide? ");
+					int intDivTwo = sc.nextInt();
+					int intDiv = intDivOne / intDivTwo;
+					System.out.print(intDivOne + " / " + intDivTwo + " = " + intDiv);
+
+				} catch(Exception e) {
+					System.out.println("That is not a valid input. Please try again.");
+
+				}
+
+				//Exponent block
+			} else if (s.equalsIgnoreCase("exponent")) {
+				try {
+					System.out.print("What is the number you would like to raise to a power? ");
+					int input1 = sc.nextInt();
+					System.out.print("What is the number you would like to use for the exponent? ");
+					int input2 = sc.nextInt();
+					
+					System.out.print(input1 + " ^ " + input2 + " = " );
+					System.out.print(pow(input1, input2));
+
+				} catch(Exception e) {
+					System.out.println("That is not a valid input. Please try again.");
+
+				}
+
+
+				//If you enter a command not recognized
+			} else {
+				System.out.print("Sorry, I don't recognize that command.");
+			}
+
+			//When you don't want to use the calculator
+		} else {
+			System.out.print("Shuting Down.");
+		}
+
+	}
+	
+	//custom exponent method
+	public static int pow(int x, int y) {
+		int count = 2;
+		
+		for(int i = 1; i < y; i++) {
+			x = x *x;
+			count++;
+		}
+		return x;
+	}
+
+}
